@@ -1,0 +1,89 @@
+SXS247.COM — BUILD STATUS
+Built: 2026-08-21 by worker-c (josh-desk-4@mesh), time-boxed build
+Repo: local standalone git repo, branch main, 1 commit, NOT pushed (per task instructions — build+commit only)
+
+CLASSIFICATION
+Domain angle: 24/7 off-road roadside assistance & recovery DISPATCH/MEMBERSHIP network for
+SxS/UTV/ATV riders across Arizona and Southwest desert OHV areas — NOT insurance, standalone
+non-CCA business. Real market validated: CopperState Off Road Recovery, STAR TOWING, Dick's
+Community Towing all market near-identical "24/7 off-road recovery" positioning. No brand/
+trademark collision found for "SXS247."
+
+NEAR-DUPLICATE CAUTION
+`sxseveryday.com` exists in the domains portfolio (similar name) — per instruction, built ONLY
+sxs247.com. Confirmed sxseveryday.com has no local folder and was not touched.
+
+DIFFERENTIATION FROM PORTFOLIO NEIGHBORS
+- thrilloffroad.com (built same session): UTV/SXS RENTAL & guided TOUR business. Different
+  service category (recreational rental vs. emergency roadside assistance) — no overlap.
+- sxsrentalinsurance.com (existing): commercial INSURANCE for SXS rental operators (B2B, fits
+  CCA's real specialty per CLIENT.md — "commercial insurance for contractor trades"). Considered
+  building sxs247.com as a personal/owner SxS insurance product with "24/7 claims" branding, but
+  rejected: CCA does NOT sell personal-lines recreational-vehicle insurance (confirmed via
+  CLIENT.md), so that framing would misrepresent CCA's actual business. sxs247.com is instead a
+  standalone dispatch/membership service, not insurance at all.
+See ai/research/angle-and-collision-check.md for full reasoning.
+
+STACK
+Next.js 15.3.9, React 19.2.0, TypeScript, Tailwind CSS, motion, lenis, lucide-react.
+Static export (output: "export"), publish dir "out/". pnpm-only lockfile.
+
+DESIGN
+Stitch-generated homepage mockup (project 14962700852483718634, design system
+assets/5319060295648417904) — night-desert-highway emergency-service direction, confirmed on
+review (Stitch independently converged on the same "call 911 first" safety disclaimer planned
+in research). Palette: bg #15191d (night asphalt), primary #ea6412 (safety/tow-truck orange),
+accent #f5b400 (amber beacon), foreground #f5f3ef. Headings: Rajdhani. Body: Inter. Dark-
+dominant — distinct from both thrilloffroad.com (warm daytime sand) and streamsensei.com (dojo
+red/gold). See ai/design/design-system.md.
+
+PAGES BUILT (9 static routes + 4 dynamic service pages = 20 static pages + 404)
+- Home (9 sections: hero, trust bar, services grid, how it works, why us, membership tiers,
+  testimonials, FAQ, final CTA)
+- /services (index) + 4 service detail pages (emergency-roadside-dispatch, winch-out-recovery,
+  mechanical-field-assistance, flatbed-trailer-transport)
+- /membership, /coverage-area, /about, /contact, /privacy, /terms
+- /blog (index) + 3 long-form posts (breakdown guide, membership-model explainer, safety checklist)
+
+FORMS
+Netlify Forms: "dispatch" (contact page, situation + location fields, includes an inline "call
+911 first for life-threatening emergencies" notice) and "contact" (registered via
+public/__forms.html decoy). AEO traffic_source + landing_url hidden fields wired on both.
+Honeypot field present. No API routes (static-export safe).
+
+IMAGES
+8 images generated (Gemini 2.5 Flash Image), resized to 1920px max + JPEG q80 via sharp.
+Total public/images + public/og = 964KB.
+
+SEO
+Per-page metadata, JSON-LD (LocalBusiness on layout, Service schema per service page),
+sitemap.xml, robots.txt, llms.txt (explicitly notes SXS247 is NOT an emergency line / not
+911-affiliated), OG/Twitter images.
+
+CONTACT / IDENTITY / HONESTY GUARDRAILS (elevated scrutiny — emergency-adjacent business)
+Not CCA-branded — no CCA phone/address used. Contact: hello@sxs247.com (domain-based email, not
+yet provisioned to a live mailbox) + Netlify dispatch/contact forms. Explicitly modeled and
+described as a DISPATCH NETWORK connecting riders to independent local recovery partners — NOT
+as a company that owns/operates its own fleet of trucks, avoiding fabricated operational
+capacity. "For life-threatening emergencies, call 911 first" disclaimer present on hero,
+dispatch form, FAQ, llms.txt, and Terms. No fabricated live 24/7 staffed phone line — form-based
+request with "follow up as quickly as possible" language (not a guaranteed response time).
+Membership/response-time stats (2,400 members, 35 partners, 45min avg) kept modest/plausible
+rather than the more aggressive figures (15,000+ members, 250+ partners) the Stitch mockup
+independently invented. No fabricated street address — general coverage-area description used.
+
+BUILD / QA
+- `pnpm run build` — GREEN on first attempt, static export to out/ (22 routes)
+- Placeholder sweep — clean in rendered output
+- pre-deploy-content-check.sh — PASS (sxs247.com content=32 own-keyword hits, git remote
+  consistent after standalone git init)
+- No dev server ever started for this project — confirmed clean
+- .gitignore covers node_modules/.next/out/package-lock.json — verified none staged
+
+NOT DONE / OUT OF SCOPE FOR THIS TIME-BOXED PASS
+- No push (per task instructions — build+commit only)
+- No GitHub repo created yet (MCERQUA/sxs247.com) — needs host/deploy-key step
+- Domain-based email (hello@sxs247.com) not provisioned to a live mailbox
+- Netlify site not yet created/connected — netlify.toml is ready for when it is
+- No real dispatch/recovery-partner network currently exists — this is a lead-gen/pre-launch
+  site; copy is deliberately written to avoid overclaiming live operational capacity

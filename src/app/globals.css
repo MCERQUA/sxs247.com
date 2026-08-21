@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== DESIGN TOKENS ===== */
+/* Replace these values with client brand colors */
+
+@layer base {
+:root {
+  /* SXS247 — night-desert-highway roadside-assistance palette */
+  --background: 210 15% 10%;          /* #15191d — night asphalt charcoal */
+  --foreground: 40 20% 96%;           /* #f5f3ef — headlight white */
+
+  --card: 210 14% 14%;                /* #1f242a */
+  --card-foreground: 40 20% 96%;
+
+  --primary: 22 88% 52%;              /* #ea6412 — safety/tow-truck orange */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 12% 20%;           /* #2b3138 */
+  --secondary-foreground: 40 20% 96%;
+
+  --accent: 45 96% 51%;               /* #f5b400 — amber beacon */
+  --accent-foreground: 210 15% 10%;
+
+  --muted: 210 12% 18%;               /* #262c33 */
+  --muted-foreground: 210 8% 64%;     /* #9aa1a9 */
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 210 12% 22%;              /* #303740 */
+  --input: 210 12% 22%;
+  --ring: 22 88% 52%;
+
+  --radius: 0.75rem;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+} /* close @layer base */
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== SELECTION ===== */
+
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* ===== SCROLLBAR (optional, dark mode) ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* ===== TOUCH TARGETS (WCAG 2.5.5 / 2.5.8) ===== */
+/* Source-level 44px floor so every built site clears QA's touch-target gate at source. */
+/* Adopted 2026-07-02 (pledge ce9b58fc) — traces to QA-manager's 36brickhouse NO-SHIP lesson. */
+/* In @layer base so it is a genuine FLOOR: `min-height` beats any `h-*` fixed-height utility */
+/* (min-height always wins over a smaller height), while an explicit `min-h-*` utility can still */
+/* opt a control out deliberately. Keeps Tailwind's cascade intact. */
+@layer base {
+  button,
+  [role="button"],
+  a.btn,
+  select,
+  textarea,
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  .edge-tab {
+    min-height: 44px;
+  }
+
+  /* Icon-only buttons collapse below 44px wide without a width floor too. */
+  button.icon,
+  .btn-icon,
+  [data-icon-only] {
+    min-width: 44px;
+  }
+}

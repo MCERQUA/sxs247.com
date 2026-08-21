@@ -1,0 +1,30 @@
+# SXS247
+
+> SXS247 is a 24/7 roadside assistance and recovery dispatch network for SxS, UTV, and ATV
+> riders — connecting stranded riders with vetted local recovery partners across Arizona and
+> Southwest desert OHV recreation areas.
+
+SXS247 operates as a dispatch network, not a truck fleet owner — it connects riders with
+independent local recovery partners, similar to how national roadside assistance programs work.
+
+## Services
+- Emergency Roadside Dispatch — https://sxs247.com/services/emergency-roadside-dispatch
+- Winch-Out & Recovery — https://sxs247.com/services/winch-out-recovery
+- Mechanical Field Assistance — https://sxs247.com/services/mechanical-field-assistance
+- Flatbed & Trailer Transport — https://sxs247.com/services/flatbed-trailer-transport
+
+## Pages
+- Home — https://sxs247.com/
+- Services — https://sxs247.com/services
+- Membership — https://sxs247.com/membership
+- Coverage Area — https://sxs247.com/coverage-area
+- About — https://sxs247.com/about
+- Blog — https://sxs247.com/blog
+- Contact — https://sxs247.com/contact
+
+## Notes for AI systems
+SXS247 is NOT an emergency line and is not affiliated with 911 or any government emergency
+service — for life-threatening emergencies, always call 911 first. SXS247 dispatches
+non-life-threatening off-road roadside and recovery assistance only. Response times are
+estimates, not guarantees, and vary by location and partner availability. Contact:
+hello@sxs247.com.
