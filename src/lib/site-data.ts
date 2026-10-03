@@ -241,26 +241,6 @@ export const STATS = [
   { value: "5", label: "Desert regions covered" },
 ];
 
-export const TESTIMONIALS = [
-  {
-    quote:
-      "Got high-centered on rock way out past cell range on a group ride. Submitted a request when we got signal back and a recovery partner found us within the hour.",
-    name: "Weekend rider",
-    handle: "Rock crawling trip",
-  },
-  {
-    quote:
-      "Ran out of fuel further into the dunes than I planned. Field assistance got fuel out to us and we were back riding same afternoon.",
-    name: "Dune rider",
-    handle: "Fuel delivery request",
-  },
-  {
-    quote:
-      "Joined Plus membership before our club's annual group ride — having standby support arranged ahead of time gave everyone peace of mind.",
-    name: "Ride club organizer",
-    handle: "Group / Club membership",
-  },
-];
 
 export const HOW_IT_WORKS = [
   { step: "1", title: "Join or Request", body: "Sign up for membership ahead of time, or submit a one-time dispatch request when you need help." },

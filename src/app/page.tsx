@@ -4,10 +4,9 @@ import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { MembershipTiers } from "@/components/sections/MembershipTiers";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTA } from "@/components/sections/CTA";
-import { TESTIMONIALS, FAQS } from "@/lib/site-data";
+import { FAQS } from "@/lib/site-data";
 
 export default function HomePage() {
   return (
@@ -30,12 +29,6 @@ export default function HomePage() {
       <HowItWorks />
       <WhyUs />
       <MembershipTiers />
-      <Testimonials
-        label="Rider Stories"
-        title="What Riders Say "
-        titleAccent="After Getting Help"
-        testimonials={TESTIMONIALS.map((t) => ({ name: t.name, role: t.handle, text: t.quote }))}
-      />
       <FAQ
         eyebrow="Questions"
         title="Frequently Asked Questions"

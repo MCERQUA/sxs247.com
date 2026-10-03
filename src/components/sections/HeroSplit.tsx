@@ -33,7 +33,7 @@ const DEFAULTS = {
   primaryHref: "/contact",
   secondaryCTA: "Learn More",
   secondaryHref: "/about",
-  image: "/images/hero.webp",
+  image: "/images/hero-night-recovery.jpg",
   imageAlt: "Description of hero image",
 };
 
